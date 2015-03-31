@@ -23,7 +23,7 @@ class PreserveFilenames_Common
     {
         return rawurldecode(basename(preg_replace_callback(
             '/%(?:[013-7][0-9a-fA-F]|2[0-46-9a-fA-F])/', // ASCII except for '%'
-            array(self, '_correctBasename_callback'),
+            array($this, '_correctBasename_callback'),
             rawurlencode($path)
         )));
     }

@@ -254,14 +254,14 @@ class action_plugin_preservefilenames_anteater extends DokuWiki_Action_Plugin
                 )
                 <\/a>
             /x',
-            array(self, '_replaceLinkURL_callback_a'),
+            array($this, '_replaceLinkURL_callback_a'),
             $event->data[1]
         );
 
         // embedded image
         $event->data[1] = preg_replace_callback(
             '/<img [^>]*?alt="([^"]*)\}\}preservefilenames:(autofilled)?:([^"]*)"[^>]*>/',
-            array(self, '_replaceLinkURL_callback_img'),
+            array($this, '_replaceLinkURL_callback_img'),
             $event->data[1]
         );
     }
